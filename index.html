@@ -1,553 +1,364 @@
 <!DOCTYPE html>
-<html lang">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Garage Transit — Support</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4A1942">
+<title>ExamPro – Privacy Policy</title>
+<style>
+  :root {
+    --primary: #4A1942;
+    --accent: #C0392B;
+    --accent-end: #E74C3C;
+    --highlight: #F39C12;
+    --success: #27AE60;
+    --bg: #FFF7F5;
+    --card: #FFFFFF;
+    --text: #2D1528;
+    --muted: #7A5F72;
+    --line: rgba(74, 25, 66, 0.10);
+    --shadow: 0 6px 24px rgba(74, 25, 66, 0.10);
+    --gradient: linear-gradient(135deg, var(--accent), var(--accent-end));
+    --radius: 20px;
+  }
+  @media (prefers-color-scheme: dark) {
     :root {
-      --asphalt: #1A1A2E;
-      --garage: #16213E;
-      --steel: #0F3460;
-      --orange: #E94560;
-      --amber: #F5A623;
-      --chrome: #C0C0C0;
-      --smoke: #6B7280;
-      --frost: #F3F4F6;
-      --green: #22C55E;
+      --bg: #1A0B17;
+      --card: #3D1532;
+      --text: #FBEFEC;
+      --muted: #C9A9C0;
+      --line: rgba(255, 255, 255, 0.10);
+      --shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
     }
+  }
 
-    body {
-      background-color: var(--asphalt);
-      color: var(--frost);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      line-height: 1.6;
-    }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
 
-    a { color: var(--orange); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    padding: calc(56px + env(safe-area-inset-top)) 20px 120px;
+    background: linear-gradient(135deg, var(--primary) 0%, rgba(192, 57, 43, 0.85) 70%, #E74C3C 100%);
+  }
+  .hero::before, .hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    pointer-events: none;
+  }
+  .hero::before { width: 360px; height: 360px; top: -140px; right: -100px; }
+  .hero::after  { width: 240px; height: 240px; bottom: -110px; left: -70px; background: rgba(243, 156, 18, 0.18); }
 
-    /* NAV */
-    nav {
-      background: var(--garage);
-      border-bottom: 1px solid var(--steel);
-      padding: 16px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+  .hero-icon {
+    position: relative;
+    width: 84px; height: 84px;
+    margin: 0 auto 22px;
+    border-radius: 24px;
+    display: grid; place-items: center;
+    background: linear-gradient(135deg, rgba(255,255,255,0.34), rgba(255,255,255,0.10));
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .hero-icon svg { width: 42px; height: 42px; stroke: #fff; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+  .hero h1 {
+    position: relative;
+    margin: 0 0 8px;
+    font-size: clamp(2rem, 6vw, 2.9rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .hero p { position: relative; margin: 0 auto; max-width: 520px; opacity: 0.88; font-size: 1.05rem; }
+  .pill {
+    position: relative;
+    display: inline-block;
+    margin-top: 22px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+  }
 
-    .nav-brand img {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-    }
+  /* ---------- Layout ---------- */
+  main { max-width: 820px; margin: -72px auto 0; padding: 0 16px 56px; position: relative; }
 
-    .nav-brand span {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--frost);
-    }
+  .card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--line);
+    padding: 26px 24px;
+    margin-bottom: 18px;
+  }
+  .card h2 {
+    display: flex; align-items: center; gap: 12px;
+    margin: 0 0 14px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .num {
+    flex: none;
+    width: 32px; height: 32px;
+    border-radius: 10px;
+    display: grid; place-items: center;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    background: var(--gradient);
+    box-shadow: 0 4px 10px rgba(192, 57, 43, 0.35);
+  }
+  .card p { margin: 0 0 12px; }
+  .card p:last-child { margin-bottom: 0; }
+  .muted { color: var(--muted); }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 24px;
-    }
+  /* ---------- Summary tiles ---------- */
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 18px; }
+  .tile {
+    border-radius: 18px;
+    padding: 18px 16px;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(74, 25, 66, 0.22);
+  }
+  .tile:nth-child(1) { background: linear-gradient(135deg, #C0392B, #E74C3C); }
+  .tile:nth-child(2) { background: linear-gradient(135deg, #4A1942, #7B2D6C); }
+  .tile:nth-child(3) { background: linear-gradient(135deg, #D68910, #F39C12); }
+  .tile:nth-child(4) { background: linear-gradient(135deg, #1E8449, #27AE60); }
+  .tile svg { width: 26px; height: 26px; stroke: #fff; fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 10px; }
+  .tile b { display: block; font-size: 1rem; margin-bottom: 4px; }
+  .tile span { display: block; font-size: 0.88rem; line-height: 1.45; opacity: 0.92; }
 
-    nav ul a {
-      color: var(--chrome);
-      font-size: 14px;
-      transition: color 0.2s;
-    }
+  /* ---------- Permissions ---------- */
+  .perms { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 6px; }
+  .perm {
+    display: flex; gap: 12px;
+    padding: 14px;
+    border-radius: 16px;
+    background: rgba(192, 57, 43, 0.06);
+    border: 1px solid var(--line);
+  }
+  @media (prefers-color-scheme: dark) { .perm { background: rgba(255, 255, 255, 0.05); } }
+  .perm .ic {
+    flex: none;
+    width: 40px; height: 40px;
+    border-radius: 12px;
+    display: grid; place-items: center;
+    background: var(--gradient);
+    box-shadow: 0 4px 10px rgba(192, 57, 43, 0.30);
+  }
+  .perm .ic svg { width: 22px; height: 22px; stroke: #fff; fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+  .perm b { display: block; font-size: 0.98rem; margin-bottom: 2px; }
+  .perm span { display: block; font-size: 0.88rem; line-height: 1.5; color: var(--muted); }
 
-    nav ul a:hover {
-      color: var(--orange);
-      text-decoration: none;
-    }
+  /* ---------- Callout ---------- */
+  .callout {
+    margin-top: 14px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border-left: 4px solid var(--highlight);
+    background: rgba(243, 156, 18, 0.12);
+    font-size: 0.95rem;
+  }
 
-    /* HERO */
-    .hero {
-      background: linear-gradient(160deg, var(--garage) 0%, var(--asphalt) 60%);
-      padding: 80px 24px;
-      text-align: center;
-      border-bottom: 1px solid var(--steel);
-    }
+  /* ---------- Contact ---------- */
+  .contact {
+    background: linear-gradient(135deg, var(--primary), #7B2D6C 55%, var(--accent));
+    color: #fff;
+    border: none;
+  }
+  .contact .num { background: rgba(255, 255, 255, 0.22); box-shadow: none; }
+  .contact .muted { color: rgba(255, 255, 255, 0.82); }
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 13px 22px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--accent);
+    background: #fff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+    transition: transform 0.15s ease;
+  }
+  .btn:active { transform: scale(0.96); }
+  .btn svg { width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
-    .hero img.app-icon {
-      width: 100px;
-      height: 100px;
-      border-radius: 22px;
-      margin-bottom: 24px;
-      box-shadow: 0 8px 32px rgba(233, 69, 96, 0.3);
-    }
+  footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 4px 16px 40px; }
 
-    .hero h1 {
-      font-size: 42px;
-      font-weight: 800;
-      color: var(--frost);
-      margin-bottom: 12px;
-    }
-
-    .hero h1 span { color: var(--orange); }
-
-    .hero p {
-      font-size: 18px;
-      color: var(--chrome);
-      max-width: 560px;
-      margin: 0 auto 32px;
-    }
-
-    .badge-appstore {
-      display: inline-block;
-      background: var(--orange);
-      color: white;
-      padding: 12px 28px;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 15px;
-      transition: opacity 0.2s;
-    }
-
-    .badge-appstore:hover {
-      opacity: 0.85;
-      text-decoration: none;
-    }
-
-    /* SECTIONS */
-    section {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 64px 24px;
-    }
-
-    .section-label {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 8px;
-    }
-
-    h2 {
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--frost);
-      margin-bottom: 40px;
-    }
-
-    /* FEATURES */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .feature-card {
-      background: var(--garage);
-      border: 1px solid var(--steel);
-      border-radius: 16px;
-      padding: 24px;
-      transition: border-color 0.2s;
-    }
-
-    .feature-card:hover { border-color: var(--orange); }
-
-    .feature-icon {
-      font-size: 28px;
-      margin-bottom: 12px;
-    }
-
-    .feature-card h3 {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--frost);
-      margin-bottom: 8px;
-    }
-
-    .feature-card p {
-      font-size: 14px;
-      color: var(--smoke);
-      line-height: 1.6;
-    }
-
-    /* PERMISSIONS */
-    .permissions-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .permission-item {
-      background: var(--garage);
-      border: 1px solid var(--steel);
-      border-radius: 12px;
-      padding: 20px 24px;
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-    }
-
-    .permission-icon {
-      font-size: 22px;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .permission-item h4 {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--frost);
-      margin-bottom: 4px;
-    }
-
-    .permission-item p {
-      font-size: 14px;
-      color: var(--smoke);
-    }
-
-    /* FAQ */
-    .faq-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    details {
-      background: var(--garage);
-      border: 1px solid var(--steel);
-      border-radius: 12px;
-      padding: 20px 24px;
-      cursor: pointer;
-      transition: border-color 0.2s;
-    }
-
-    details[open] { border-color: var(--orange); }
-
-    summary {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--frost);
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    summary::after {
-      content: '+';
-      color: var(--orange);
-      font-size: 20px;
-      font-weight: 400;
-    }
-
-    details[open] summary::after { content: '−'; }
-
-    details p {
-      margin-top: 12px;
-      font-size: 14px;
-      color: var(--smoke);
-      line-height: 1.7;
-    }
-
-    /* CONTACT */
-    .contact-box {
-      background: var(--garage);
-      border: 1px solid var(--steel);
-      border-radius: 20px;
-      padding: 48px;
-      text-align: center;
-    }
-
-    .contact-box p {
-      color: var(--chrome);
-      font-size: 16px;
-      margin-bottom: 24px;
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .contact-email {
-      display: inline-block;
-      background: var(--orange);
-      color: white;
-      padding: 14px 32px;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 15px;
-      transition: opacity 0.2s;
-    }
-
-    .contact-email:hover {
-      opacity: 0.85;
-      text-decoration: none;
-    }
-
-    .contact-phone {
-      display: block;
-      margin-top: 16px;
-      color: var(--smoke);
-      font-size: 14px;
-    }
-
-    /* DIVIDER */
-    .divider {
-      border: none;
-      border-top: 1px solid var(--steel);
-      margin: 0;
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--garage);
-      border-top: 1px solid var(--steel);
-      padding: 32px 24px;
-      text-align: center;
-    }
-
-    footer p {
-      color: var(--smoke);
-      font-size: 13px;
-      margin-bottom: 8px;
-    }
-
-    footer a {
-      color: var(--smoke);
-      font-size: 13px;
-      margin: 0 12px;
-      transition: color 0.2s;
-    }
-
-    footer a:hover { color: var(--orange); text-decoration: none; }
-
-    /* RESPONSIVE */
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 28px; }
-      .hero p { font-size: 15px; }
-      nav ul { display: none; }
-      .contact-box { padding: 32px 20px; }
-      h2 { font-size: 22px; }
-    }
-  
-<body></style>
+  @media (max-width: 520px) {
+    .card { padding: 22px 18px; }
+    .hero { padding-bottom: 110px; }
+  }
+</style>
 </head>
+<body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="nav-brand">
-      <img src="icon.png" alt="Garage Transit icon" />
-      <span>Garage Transit</span>
+<header class="hero">
+  <div class="hero-icon">
+    <svg viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.5c0 4.5-3.2 8.2-7.5 9.5-4.3-1.3-7.5-5-7.5-9.5V6L12 3z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></svg>
+  </div>
+  <h1>Privacy Policy</h1>
+  <p>How ExamPro handles your information, in plain language.</p>
+  <span class="pill">Last updated: November 18, 2026</span>
+</header>
+
+<main>
+
+  <div class="tiles">
+    <div class="tile">
+      <svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18.5h2"/></svg>
+      <b>Stays on your device</b>
+      <span>Cards, notes and settings are stored locally.</span>
     </div>
-    <ul>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#permissions">Permissions</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="privacy.html">Privacy Policy</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO -->
-  <div class="hero">
-    <img class="app-icon" src="icon.png" alt="Garage Transit" />
-    <h1>Garage <span>Transit</span></h1>
-    <p>Your mechanic knows your car. Now your phone does too. Track service history, fuel logs, and get AI-powered advice tailored to your specific vehicle.</p>
-    <a class="badge-appstore" href="#">Download on the App Store</a>
+    <div class="tile">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/><path d="M4 4l16 16"/></svg>
+      <b>No account needed</b>
+      <span>We don't ask you to sign up or log in.</span>
+    </div>
+    <div class="tile">
+      <svg viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/><path d="M4 4l16 16"/></svg>
+      <b>No tracking</b>
+      <span>No ads, no ad identifiers, no cross-app tracking.</span>
+    </div>
+    <div class="tile">
+      <svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8L12 3z"/><path d="M18.5 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8.8-2z"/></svg>
+      <b>AI only on request</b>
+      <span>Text is sent out only when you use AI simplify.</span>
+    </div>
   </div>
 
-  <!-- FEATURES -->
-  <section id="features">
-    <div class="section-label">What's inside</div>
-    <h2>Everything your car needs</h2>
-    <div class="features-grid">
+  <section class="card">
+    <h2><span class="num">1</span>Introduction</h2>
+    <p>This Privacy Policy describes how the ExamPro mobile application ("ExamPro", "the app", "we", "us") handles your information. By using the app you agree to the practices described below.</p>
+  </section>
 
-      <div class="feature-card">
-        <div class="feature-icon">🚗</div>
-        <h3>Multi-Vehicle Garage</h3>
-        <p>Add and manage multiple cars. Scan VIN directly from the plate or registration document using your camera.</p>
+  <section class="card">
+    <h2><span class="num">2</span>Information stored on your device</h2>
+    <p>ExamPro stores the content you create or import &mdash; for example study cards, questions, answers, notes, attached photos, voice notes and imported documents &mdash; as well as your preferences and progress, in the app's storage on your device.</p>
+    <p>This information is not uploaded to our servers.</p>
+  </section>
+
+  <section class="card">
+    <h2><span class="num">3</span>Device permissions</h2>
+    <p class="muted">The app asks for access to a feature only when you use it. You can grant or revoke every permission at any time in iOS Settings.</p>
+    <div class="perms">
+      <div class="perm">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 8h4l2-3h6l2 3h4v11H3z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
+        <div><b>Camera</b><span>Take photos of exam materials, textbooks and notes and attach them to cards.</span></div>
       </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">🔧</div>
-        <h3>Service History</h3>
-        <p>Log every maintenance record with date, mileage, cost and workshop. Attach receipt photos — OCR reads the total automatically.</p>
+      <div class="perm">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.8"/><path d="M3 17l5-5 4 4 3-3 6 6"/></svg></div>
+        <div><b>Photo Library</b><span>Attach photos to cards and save card images to your library.</span></div>
       </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">✨</div>
-        <h3>AI Mechanic</h3>
-        <p>Describe a symptom and the AI gets your full service history as context. Answers are specific to your car, not generic advice.</p>
+      <div class="perm">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg></div>
+        <div><b>Microphone</b><span>Record voice notes and audio explanations. Recordings stay on your device.</span></div>
       </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">⛽</div>
-        <h3>Fuel Log & Efficiency</h3>
-        <p>Track every fill-up, calculate real fuel consumption and compare it to your historical average.</p>
+      <div class="perm">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <div><b>Location</b><span>Remember where you study and see your most productive spots. Stored on your device only.</span></div>
       </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">🔔</div>
-        <h3>Smart Reminders</h3>
-        <p>Set alerts by mileage or date — oil change, tire swap, insurance renewal. Syncs directly to your calendar.</p>
+      <div class="perm">
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 3-6 6.5-6s6.5 2.4 6.5 6"/><path d="M17 5a3 3 0 010 6M19.5 14c1.2.8 2 2.2 2 4"/></svg></div>
+        <div><b>Contacts</b><span>Pick classmates or study-group members when sharing. Never uploaded to our servers.</span></div>
       </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">📊</div>
-        <h3>Expense Analytics</h3>
-        <p>Visual charts of monthly spending broken down by category. Compare costs across multiple vehicles.</p>
+      <div class="perm">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
+        <div><b>Calendar</b><span>Find free time slots and create study sessions, reminders and exam deadlines.</span></div>
       </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">🗺️</div>
-        <h3>Workshop Map</h3>
-        <p>All your service shops and fuel stations pinned on a map based on your records. One tap to navigate.</p>
+      <div class="perm">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M7 7l10 10-5 4V3l5 4L7 17"/></svg></div>
+        <div><b>Bluetooth</b><span>Share study materials directly with nearby devices.</span></div>
       </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">🔌</div>
-        <h3>OBD-II Connect</h3>
-        <p>Pair a Bluetooth OBD-II adapter to read live mileage and diagnostic trouble codes directly in the app.</p>
+      <div class="perm">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 8V6a2 2 0 012-2h2M16 4h2a2 2 0 012 2v2M20 16v2a2 2 0 01-2 2h-2M8 20H6a2 2 0 01-2-2v-2"/><path d="M9 10v1M15 10v1M12 10v3h-1M9 16c1.5 1.3 4.5 1.3 6 0"/></svg></div>
+        <div><b>Face ID</b><span>Lock the app and protect private content. Biometric data is handled by iOS and never reaches the app.</span></div>
       </div>
-
+      <div class="perm">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 1112 0v5l2 2H4z"/><path d="M10 21h4"/></svg></div>
+        <div><b>Notifications</b><span>Deliver study reminders and calls from in-app features.</span></div>
+      </div>
     </div>
   </section>
 
-  <hr class="divider" />
+  <section class="card">
+    <h2><span class="num">4</span>AI features and third-party services</h2>
+    <p>When you use the AI feature that simplifies an answer, the text of that answer (and the language you selected) is sent over an encrypted connection to a third-party AI provider (Groq, running a Llama language model) to generate the simplified version. The provider processes the request under its own privacy policy.</p>
+    <p>We do not intentionally send your name, contacts, location or other personal data as part of this request.</p>
+    <div class="callout"><b>Tip:</b> please don't enter sensitive personal information into content you send to the AI feature.</div>
+  </section>
 
-  <!-- PERMISSIONS -->
-  <section id="permissions">
-    <div class="section-label">Transparency</div>
-    <h2>Why we request access</h2>
-    <div class="permissions-list">
+  <section class="card">
+    <h2><span class="num">5</span>Analytics</h2>
+    <p>The app does not use third-party advertising or behavioural analytics services. We do not collect advertising identifiers (IDFA).</p>
+  </section>
 
-      <div class="permission-item">
-        <div class="permission-icon">📷</div>
-        <div>
-          <h4>Camera</h4>
-          <p>Used to scan your VIN from a license plate or registration document, and to photograph service receipts for automatic data extraction.</p>
-        </div>
-      </div>
+  <section class="card">
+    <h2><span class="num">6</span>Data sharing</h2>
+    <p>We do not sell, rent or trade your personal information. Data leaves your device only when you explicitly use a feature that requires it &mdash; for example the AI feature described above, or sharing materials with nearby users via Bluetooth &mdash; or if required by law.</p>
+  </section>
 
-      <div class="permission-item">
-        <div class="permission-icon">🖼️</div>
-        <div>
-          <h4>Photo Library</h4>
-          <p>Allows you to attach existing photos to your vehicle or service records, and to save vehicle photos back to your library.</p>
-        </div>
-      </div>
+  <section class="card">
+    <h2><span class="num">7</span>Data retention and deletion</h2>
+    <p>Because your data lives on your device, you control it. You can delete individual items inside the app, or delete all app data by uninstalling ExamPro. Removing the app deletes the locally stored content.</p>
+  </section>
 
-      <div class="permission-item">
-        <div class="permission-icon">🎙️</div>
-        <div>
-          <h4>Microphone</h4>
-          <p>Used to record voice notes attached to service records and to enable voice input for the AI Mechanic assistant.</p>
-        </div>
-      </div>
+  <section class="card">
+    <h2><span class="num">8</span>Security</h2>
+    <p>We use reasonable measures to protect information, including encrypted network connections for features that use the network and an optional biometric lock for the app. No method of storage or transmission is completely secure, so we cannot guarantee absolute security.</p>
+  </section>
 
-      <div class="permission-item">
-        <div class="permission-icon">📍</div>
-        <div>
-          <h4>Location</h4>
-          <p>Automatically fills in the workshop or fuel station address when creating a new record, and displays them on the map.</p>
-        </div>
-      </div>
+  <section class="card">
+    <h2><span class="num">9</span>Children's privacy</h2>
+    <p>ExamPro is not directed to children under 13, and we do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us and we will address it.</p>
+  </section>
 
-      <div class="permission-item">
-        <div class="permission-icon">📅</div>
-        <div>
-          <h4>Calendar</h4>
-          <p>Creates calendar events for upcoming service dates, insurance expiry and custom reminders so you never miss a deadline.</p>
-        </div>
-      </div>
+  <section class="card">
+    <h2><span class="num">10</span>Your rights</h2>
+    <p>Depending on where you live, you may have the right to access, correct, delete or restrict the use of your personal information. Since we do not maintain user accounts or store your content on our servers, most of these actions can be performed directly within the app or through your device settings. For any request, contact us using the details below.</p>
+  </section>
 
-      <div class="permission-item">
-        <div class="permission-icon">👤</div>
-        <div>
-          <h4>Contacts</h4>
-          <p>Lets you quickly import your mechanic, insurer or dealer contact details directly into a vehicle profile.</p>
-        </div>
-      </div>
+  <section class="card">
+    <h2><span class="num">11</span>Changes to this policy</h2>
+    <p>We may update this Privacy Policy from time to time. The "Last updated" date at the top of this page shows when it was last revised. Continued use of the app after changes means you accept the updated policy.</p>
+  </section>
 
-      <div class="permission-item">
-        <div class="permission-icon">🔵</div>
-        <div>
-          <h4>Bluetooth</h4>
-          <p>Connects to an OBD-II Bluetooth adapter to read current mileage and engine diagnostic codes from your vehicle.</p>
-        </div>
-      </div>
-
-      <div class="permission-item">
-        <div class="permission-icon">🔒</div>
-        <div>
-          <h4>Face ID</h4>
-          <p>Optional biometric lock to protect access to your garage and vehicle data when you open the app.</p>
-        </div>
-      </div>
-
+  <section class="card contact">
+    <h2><span class="num">12</span>Contact us</h2>
+    <p class="muted">Questions about this Privacy Policy or your data? We're happy to help.</p>
+    <div class="btns">
+      <a class="btn" href="mailto:[belalortam@gmail.com]">
+        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        [belalortam@gmail.com]
+      </a>
+      <a class="btn" href="tel:[+7 904 202-90-73]">
+        <svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>
+        [+7 904 202-90-73]
+      </a>
     </div>
   </section>
 
-  <hr class="divider" />
+</main>
 
-  <!-- FAQ -->
-  <section id="faq">
-    <div class="section-label">Help</div>
-    <h2>Frequently asked questions</h2>
-    <div class="faq-list">
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </div>
-  </section>
-
-  <hr class="divider" />
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="contact-box">
-      <div class="section-label" style="margin-bottom:12px;">Support</div>
-      <h2 style="margin-bottom:16px;">We're here to help</h2>
-      <p>Have a question, found a bug, or want to suggest a feature? Send us an email and we'll get back to you as soon as possible.</p>
-      <a class="contact-email" href="mailto:frankmelort@gmail.com">frankmelort@gmail.com</a>
-      <a class="contact-phone" href="tel:79158185236">79158185236</a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Garage Transit. All rights reserved.</p>
-    <div>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="#contact">Support</a>
-    </div>
-  </footer>
+<footer>&copy; 2026 ExamPro. All rights reserved.</footer>
 
 </body>
 </html>
